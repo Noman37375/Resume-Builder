@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Dynamic Resume Builder By Noman</title>
+</head>
+
+<body>
+    <div class="mainHeading">
+        <h1>Dynamic Resume Builder By Noman</h1>
+    </div>
+
+    <div class="form-container">
+        
+        <div id="u-heading">
+            <h3>Fill in your details to build your resume</h3>
+        </div>
+        <form id="resume-form">
+
+            <!-- Personal Details Section -->
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <label for="name">Name:<span class="required">*</span></label>
+                <br>
+                <input type="text" id="name" placeholder="Enter your name"  required>
+                <br>
+                <label for="job-title">Job Title (e.g., Frontend Developer):<span class="required">*</span></label>
+                <br>
+                <input type="text" id="job-title" placeholder="Enter your Job Title" required>
+                <br>
+                <label for="email">Email:<span class="required">*</span></label>
+                <br>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <br>
+                <label for="phone">Phone:<span class="required">*</span></label>
+                <br>
+                <input type="text" id="phone" placeholder="Enter your phone number" required>
+                <br>
+                <label for="location">Location:<span class="required">*</span></label>
+                <br>
+                <input type="text" id="location" placeholder="Enter your location" required>
+                <br>
+                <label for="linkdin">LinkedIn:</label>
+                <br>
+                <input type="text" id="linkdin" placeholder="Enter your LinkedIn profile" >
+            </fieldset>
+
+            <!-- Skills Section -->
+            <fieldset>
+                <legend>Skills</legend>
+
+                <label for="skills">Skills (comma-separated)<span class="required">*</span>:</label>
+                <input type="text" id="skills" placeholder="Enter your skills" required>
+            </fieldset>
+
+            <!-- Profile Picture Section -->
+            <fieldset>
+                <legend>Profile Picture</legend>
+                <div>
+                    <label for="profilePicture">Profile Picture<span class="required">*</span>:</label>
+                    <input type="file" id="profilePicture" accept="image/*" required>
+                </div>
+            </fieldset>
+
+            <!-- Summary Section -->
+            <fieldset>
+                <legend>Summary</legend>
+
+                <label for="summary">Summary<span class="required">*</span>:</label>
+                <textarea id="summary" placeholder="Enter your summary" spellcheck="true" required></textarea>
+            </fieldset>
+
+            <!-- Certifications Section -->
+            <fieldset>
+                <legend>Certifications</legend>
+
+                <div id="certifications-container">
+                    <input type="text" class="certification" style="flex-grow: 1;margin: 3px;" placeholder="Enter certification name" >
+                    <input type="text" class="certification-institution" style="flex-grow: 1;margin: 3px;" placeholder="Enter certification institute" >
+                    <input type="text" class="certification-year" style="flex-grow: 1;margin: 3px;" placeholder="From Year" >
+                    <input type="text" class="certification-year" style="flex-grow: 1;margin: 3px;" placeholder="To Year" >
+                </div>
+                <button type="button" id="add-certification">Add Certification</button>
+            </fieldset>
+            <!-- Education Section -->
+            <fieldset>
+                <legend>Education<span class="required">*</span></legend>
+
+                <div id="education-container">
+                   
+                    <select name="education" class="education" style="flex-grow: 1;margin: 3px;">
+                        <option value="education" disabled selected>Select your education</option>
+                    <option value="Maatriculation">Matriculation (Matric)
+                    </option>
+                    <option value=">Intermediate">Intermediate(Inter)
+                    </option>
+                    <option value="O-Level (Ordinary Level)">O-Level (Ordinary Level)
+                    </option>
+                    <option value="A-Level (Advanced Level)">A-Level (Advanced Level)</option>
+                    <option value="High School Diploma">High School Diploma</option>
+                    <option value="Associate Degree">Associate Degree</option>
+                    <option value="Bachelor of Arts (BA)">Bachelor of Arts (BA)</option>
+                    <option value="Bachelor of Science (BSc)">Bachelor of Science (BSc)</option>
+                    <option value="Bachelor of Commerce (BCom)">Bachelor of Commerce (BCom)</option>
+                    <option value="Bachelor of Engineering (BEng)">Bachelor of Engineering (BEng)</option>
+                    <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                    <option value="Master of Arts (MA)">Master of Arts (MA)</option>
+                    <option value="Master of Science (MSc)">Master of Science (MSc)</option>
+                    <option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
+                    <option value="Master of Education (MEd)">Master of Education (MEd)</option>
+                    <option value="Doctor of Philosophy (PhD)">Doctor of Philosophy (PhD)</option>
+                    <option value="Juris Doctor (JD)">Juris Doctor (JD)</option>
+                    <option value="Master of Social Work (MSW)">Master of Social Work (MSW)</option>
+                    <option value="Graduate Diploma">Graduate Diploma</option>
+                    <option value="Higher National Diploma (HND)">Higher National Diploma (HND)</option>
+                    <option value="Postgraduate Certificate">Postgraduate Certificate</option>
+                </select>
+                    <input type="text" class="education-school" style="flex-grow: 1;margin: 3px;" placeholder="Enter certification School" >
+                    <input type="text" class="education-year" style="flex-grow: 1;margin: 3px;" placeholder="From Year" required>
+                    <input type="text" class="education-year" style="flex-grow: 1;margin: 3px;"placeholder="To Year" required>
+                </div>
+                <button type="button" id="add-education">Add Education</button>
+            </fieldset>
+
+            <!-- Work Experience Section -->
+            <fieldset>
+                <legend>Work Experience</legend>
+
+                <div id="experience-container">
+                    <input type="text" class="experience" style="flex-grow: 1;margin: 3px;" placeholder="Enter work experience details">
+                    <input type="text" class="work-position" style="flex-grow: 1;margin: 3px;" placeholder="Enter Your Position" >
+                    <input type="text" class="experience-year" style="flex-grow: 1;margin: 3px;"placeholder="From Year" >
+                    <input type="text" class="experience-year" style="flex-grow: 1;margin: 3px;" placeholder="To Year" >
+                </div>
+                <button type="button" id="add-experience">Add Experience</button>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <input type="button" value="Update Resume" class="button" id="update-resume">
+
+        </form>
+    </div>
+    <div class="resume-container">
+        <div class="left-container">
+            <img src="pfp.webp" alt="Profile Picture" class="profile-picture">
+
+            <section class="personal-info">
+                <h3 class="profile-info">Personal Information</h3>
+               <div class="information">
+                 <p><i class="fa fa-phone" aria-hidden="true"></i>
+                    <strong>Phone:</strong><span id="display-phone" contenteditable="true"> +92 321-xxxxx04</span>
+                </p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i>
+                    <strong>Email:</strong><span id="display-email"contenteditable="true"><a 
+                            > nomanu222555@gmail.com</a></span>
+                </p>
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <strong>Location:</strong><span id="display-location"contenteditable="true"> New Karachi, Karachi, Pakistan</span>
+                </p>
+                <p  id="linkdinData"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    <strong>Linkdin:</strong> <span contenteditable="true" id="display-linkdin"> Muhammad Noman</span>
+                </p>
+            </div>
+            </section>
+            <hr>
+            <section id="H-skills">
+                <h3 class="profile-info">Skills</h3>
+                <ul id="display-skills">
+                    <li contenteditable="true">HTML</li>
+                    <li contenteditable="true">CSS</li>
+                    <li contenteditable="true">JavaScript</li>
+                    <li contenteditable="true">TypeScript</li>
+                    <li contenteditable="true">Next JS</li>
+                </ul>
+            </section>
+            <!-- <section id="hide-show">
+                <button id="toggle-skills">Hide Skills</button>
+            </section> -->
+
+        </div>
+
+        <div class="right-container">
+            <div class="name">
+                <div id="display-name" contenteditable="true">Muhammad Noman</div>
+                <br><br>
+                <span id="display-job" contenteditable="true">(Frontend Developer)</span>
+            </div>
+
+            <div class="after-name">
+                <section class="summary">
+                    <div class="Headings">Summary</div>
+                    <p id="display-summary" contenteditable="true">Enthusiastic computer science student specializing in AI,
+                        Metaverse, and Web 3.0 development through a course at Governor House.
+                        Proven experience in creating projects that apply theoretical knowledge to practical
+                        applications.
+                        Aiming to develop expertise and contribute to innovative technology solutions.
+                    </p>
+                </section>
+                <div id="certificationData">
+                <section class="certification">
+                    <div class="Headings">Certifications (Onsite & Online)</div>
+                    <div id="certifications-list">
+
+                        <p contenteditable="true"class="display-certifications"><strong contenteditable="true">CIT</strong><br><em contenteditable="true">${institution}</em> <span contenteditable="true" id="floating-right">Aug 2019 -
+                                Jun 2020</span></p>
+                        <p contenteditable="true" class="display-certifications"><strong contenteditable="true">Web Developement</strong><br><em contenteditable="true">${institution}</em> <span contenteditable="true"
+                                id="floating-right">Mar 2020 - June
+                                2020</span></p>
+                        <p contenteditable="true"class="display-certifications"><strong contenteditable="true">Wordpress</strong><br><em contenteditable="true">${institution}</em><span contenteditable="true"
+                                id="floating-right"> July 2022 - Oct
+                                2022</span></p>
+                        <p  contenteditable="true"class="display-certifications"><strong contenteditable="true">Freelancing</strong><br><em contenteditable="true">${institution}</em><span contenteditable="true" id="floating-right"> July
+                                2022 - Oct 2022</span>
+                        </p>
+                        <p contenteditable="true" class="display-certifications"><strong contenteditable="true">HVAC</strong><br><em contenteditable="true">${institution}</em><span contenteditable="true" id="floating-right">Sep 2022 -
+                                Jun 2023</span></p>
+
+                        <p contenteditable="true" class="display-certifications"><strong contenteditable="true">Cloud Computing and Applied Generative AI</strong><br><em contenteditable="true">${institution}</em>
+                            <span  contenteditable="true"id="floating-right"> Feb 2024
+                                - Ongoing</span></p>
+                    </div>
+                </section>
+            </div>
+
+                <section class="education">
+                    <div class="Headings">Education</div>
+                    <div id="education-list">
+                        <p class="display-education"><strong contenteditable="true">Matriculation</strong ><br><em contenteditable="true">${school}</em> <span contenteditable="true" id="floating-right"> July
+                            2022 - Oct 2022</span></p>
+                        <p class="display-education"><strong contenteditable="true">Intermediate</strong><br><em contenteditable="true">${school}</em> <span contenteditable="true" id="floating-right"> July
+                            2022 - Oct 2022</span></p>
+                    </div>
+                </section>
+         <div id="experiencenData">
+                <section id="work-experience">
+                    <div class="Headings">Work Experience</div>
+                    <div id="experience-list">
+                        <p class="display-experience"><strong contenteditable="true">Milennimium Enginnering Pvt Ltd </strong ><br><em contenteditable="true"contenteditable="true">${workPlace}</em> <span contenteditable="true" id="floating-right"> July
+                            2022 - Oct 2022</span></p>
+                        <p class="display-experience"><strong contenteditable="true">Artx Digital</strong><br><em contenteditable="true">${workPlace}</em> <span contenteditable="true"id="floating-right"> July
+                            2022 - Oct 2022</span></p>
+                    </div>
+                
+                </section>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button id="url">
+        share url
+    </button> -->
+<button id="pdf">
+    PDF
+</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
